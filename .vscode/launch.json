@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Current TS Tests File",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "args": [
+        "--async-stack-traces",
+        "-r",
+        "ts-node/register/transpile-only",
+        "--config",
+        "./tests/.mocharc.json",
+        "${relativeFile}"
+      ],
+      "cwd": "${workspaceRoot}",
+      "env": {
+        "TS_NODE_PROJECT": "tsconfig.json",
+        "TS_NODE_FILES": "true",
+      },
+      "outputCapture": "std"
+    }
+  ]
+}
